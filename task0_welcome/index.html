@@ -3,7 +3,15 @@
 <html>
 <head>
     <title>Page Title</title>
-    
+    <script>
+        var name = prompt('What is your name?');
+        var createMessage = function (name){
+            var day = (new Date()).toString().substring(0,3);
+            var message = "Hello " + name + "! Today is: " + day; 
+            return message;
+        };
+        alert(createMessage(name));
+    </script>
 </head>
 <h1>Welcome to the JS jungle!</h1>
 <body>
