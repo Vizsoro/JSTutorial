@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Calculate Pi!</title>
+</head>
+
+<body>
+
+
+
+
+</body>
+
+<script>
+    var distance = function(point){
+        let xPart = Math.pow(point.x-0.5,2);
+        let yPart = Math.pow(point.y-0.5,2);
+        let answer = Math.sqrt(xPart + yPart);
+        return answer;        
+    };
+    
+    for(let i = 1; i < 10; i++){
+        let insideTheCircle = 0;
+        let bound = i*100000;
+        for(let k = 1; k<bound; k++){
+            var point = {
+                x : Math.random(),
+                y : Math.random()
+            };
+            if ( distance(point) < 0.5){
+                insideTheCircle ++;
+            }
+        }
+        let approxPi = 4 * insideTheCircle / (bound);
+        console.log("Using iteration:" + (bound));
+        console.log("Pi approx:" + approxPi);
+        console.log("The accuracy is: " + (approxPi / Math.PI));
+        
+    }
+    
+    
+    
+</script>
+</html>
